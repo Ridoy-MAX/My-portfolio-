@@ -1,0 +1,127 @@
+.contact .contact_left h1{
+
+    background: linear-gradient(90deg,#102b51,#f9bf01);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    font-weight: 700;
+    font-family: var(--family1);
+    font-size: 6.81vw;
+    line-height: 1.15em;
+    margin-top: 100px;
+}
+.contact{
+    margin-bottom: 100px;
+}
+.contact .contact_right{
+   margin-top: 150px;
+}
+.contact .contact_left{
+    padding: 30px;
+}
+.contact .contact_left h2{
+    font-family: var(--family1);
+    font-size: 1.67vw;
+    font-weight: 400;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.contact .contact_left .from{
+    padding-right: 140px;
+}
+.contact .contact_left .from p{
+    font-size: 14px;
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+    letter-spacing: 0.2em !important;
+    font-family: var(--family1);
+    text-transform: uppercase;
+
+}
+
+.contact .contact_left .from .input{
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--brand_color);
+}
+
+.contact .contact_left .from .input input{
+    width: 100%;
+    border: 1px solid rgba(248, 248, 255, 0);
+    outline: 0;
+    background-color: rgba(240, 248, 255, 0);
+}
+
+.contact .contact_left .from .input textarea{
+    width: 100%;
+    border: 1px solid rgba(248, 248, 255, 0);
+    outline: 0;
+    background-color: rgba(240, 248, 255, 0);
+}
+
+.contact .contact_left .from .send{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    width: 150px;
+    height: 50px;
+    border-radius: 40px;
+    background: linear-gradient(550deg,#102b51,#f9bf01);
+    background-clip: border-box;
+    /* -webkit-background-clip: text; */
+    /* -webkit-text-fill-color: transparent; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0px !important;
+    font-family: var(--family1);
+    font-weight: 600;
+    padding-right: 0px !important;
+    text-transform: uppercase;
+    top: 10px !important;
+    margin-left: 0px !important;
+    text-decoration: none;
+}
+
+
+.contact .contact_left .from .send h6{
+    top: 7px;
+    color: rgb(255, 255, 255);
+    font-size: 12px;
+    letter-spacing: 0.3em !important;
+    font-weight: 400;
+
+}
+@media screen and (max-width: 575px) {
+    /* .contact .contact_right  */
+    .contact .contact_right {
+        position: absolute;
+        top: 0;
+        z-index: -9;
+        margin-top: 150px;
+     }
+    .contact .contact_left h2{
+        font-family: var(--family1);
+        font-size: 4.67vw;
+        font-weight: 400;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .contact .contact_left .from{
+        padding-right: 0px;
+    }
+    .contact .contact_left{
+        padding: 0px;
+    }
+
+    .contact .contact_left h1{
+
+        background: linear-gradient(90deg,#102b51,#f9bf01);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        display: inline-block;
+        font-weight: 700;
+        font-family: var(--family1);
+        font-size: 6.81vw;
+        line-height: 1.15em;
+        margin-top: 10px;
+    }
+}

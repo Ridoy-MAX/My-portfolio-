@@ -1,0 +1,128 @@
+.About_section_one .Heading_one h1{
+    background: linear-gradient(90deg,#0557b4,#5a480b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    font-weight: 700;
+    font-family: var(--family1);
+    font-size: 4.81vw;
+    line-height: 1.15em;
+    margin-top: 100px;
+}
+.About_section_one {
+    padding-bottom: 150px;
+
+}
+.photo_my {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 450px;
+    margin: auto;
+    border-radius: 35px;
+    overflow: hidden;
+    position: relative;
+    padding: 4px;
+    /* animation: borderAnimation 6s linear infinite; */
+  
+  }
+  
+  .photo_my::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    z-index: -1;
+    border-radius: inherit;
+    background: linear-gradient(90deg, #7338e7, #f9bf01);
+    /* animation: borderAnimation 6s linear infinite; */
+  
+  }
+  
+  @keyframes borderAnimation {
+    0% {
+      background: linear-gradient(90deg, #7338e7, #f9bf01);
+    }
+    50% {
+      background: linear-gradient(90deg, #f9bf01, #7338e7);
+    }
+    100% {
+      background: linear-gradient(90deg, #7338e7, #f9bf01);
+    }
+  }
+  
+  
+  
+    
+    .my_image{
+      width: 100%;
+      height: 100%;
+      border-radius: 32px;
+      /* border-radius: 100%; */
+    }
+.About_section_one .Heading_one h2{
+    font-family: var(--family1);
+    font-size: 1.67vw;
+    font-weight: 400;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    color: #000;
+ 
+}
+
+.About_section_one .Heading_one p{
+    font-weight: 500;
+    font-family: var(--family1);
+    font-size: 16px;
+    color: #e0e0e0;
+    padding-right: 205px;
+}
+
+
+.About_section_one .Heading_one img{
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+@media screen and (max-width: 575px) {
+    .About_section_one .Heading_one img{
+        margin-top: 80px;
+        margin-bottom: 80px;
+        position: absolute;
+        top: 0;
+        z-index: -9;
+    }
+    .About_section_one .Heading_one h1{
+        background: linear-gradient(90deg,#102b51,#f9bf01);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        display: inline-block;
+        font-weight: 700;
+        font-family: var(--family1);
+        font-size: 9.81vw;
+        line-height: 1.15em;
+        margin-top: 10px;
+    }
+    .About_section_one .Heading_one h2{
+        font-family: var(--family1);
+        font-size: 6.67vw;
+        font-weight: 400;
+        margin-top: 18px;
+        margin-bottom: 18px;
+     
+    }
+ 
+.About_section_one .Heading_one p{
+    font-weight: 500;
+    font-family: var(--family1);
+    font-size: 13px;
+    color: #000000;
+    padding-right: 2px;
+    padding-bottom: 30px;
+}
+
+}

@@ -1,0 +1,124 @@
+.why_section_two {
+    margin-top: 150px;
+}
+.why_section_two .heading_one {
+
+}
+.why_section_two .heading_one .card h1{
+    font-family: var(--family1);
+    letter-spacing: -.011em;
+    line-height: 1.2em;
+    color: #016bff;
+    font-size: 2.5vw;
+
+}
+.why_section_two .heading_one .card{
+    padding: 30px;
+}
+.why_section_two .heading_one .card .one{
+    display: flex;
+    margin-top: 40px;
+}
+
+.why_section_two .heading_one .card .one p{
+    margin-left: 20px;
+    font-family: var(--family1);
+    line-height: 1.5em;
+    color: #555;
+    font-size: 16px;
+}
+
+
+.why_section_two .heading_two{
+    margin-top: 100px;
+    padding-top: 200px;
+    padding-bottom: 200px;
+    background-color: var(--brand_color);
+}
+.why_section_two .heading_two h1{
+    font-weight: 700;
+    font-size: 5vw;
+    font-family: var(--family1);
+    color: white;
+    text-align: center;
+}
+
+.why_section_two .heading_two .one{
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.why_section_two .heading_two .one .button{
+    width: 230px;
+    padding: 15px 25px;
+    height: 50px;
+    border-radius: 40px;
+    font-family: var(--family1);
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.3em !important;
+    background-color: #ffffff;
+text-decoration: none;
+color: rgb(0, 0, 0);
+margin-top: 20px;
+text-transform: uppercase;
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 575px) {
+
+    .why_section_two .heading_one .card .one img{
+   
+        width: 80px;
+        height: 80px;
+    }
+    .why_section_two .heading_one .card .one p{
+        margin-left: 20px;
+        font-family: var(--family1);
+        line-height: 1.5em;
+        color: #555;
+        font-size: 12px;
+   
+    }
+    .why_section_two .heading_one .card{
+        padding: 5px;
+    }
+    .why_section_two .heading_two{
+        margin-top: 50px !important;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        padding: 20px;
+        background-color: var(--brand_color);
+    }
+    .why_section_two .heading_two .one{
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    
+.why_section_two .heading_two .one .button{
+    width: 220px;
+    padding: 15px 25px;
+    height: 50px;
+    border-radius: 40px;
+    font-family: var(--family1);
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.3em !important;
+    background-color: #ffffff;
+text-decoration: none;
+color: rgb(0, 0, 0);
+margin-top: px;
+text-transform: uppercase;
+}
+
+}
+
+

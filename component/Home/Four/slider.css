@@ -1,0 +1,7 @@
+.slider_red_one .slick-slider .slick-list{
+ 
+}
+.slick-slider .slick-list {
+  transform: translate3d(0, 0, 0);
+  height: 700px;
+}

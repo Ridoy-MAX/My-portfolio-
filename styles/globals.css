@@ -1,0 +1,141 @@
+.red-slider .slick-list {
+  transform: translate3d(0, 0, 0);
+  height: 907px !important;
+  padding-top: 200px !important;
+
+}
+
+.red-slider .slick-list .slick-slide {
+  display: flex;
+  justify-content: center;
+  /* width: 300px !important; */
+  /* backdrop-filter: blur(20px) !important; */
+
+}
+
+.red-slider .slick-list .slick-active .Home_item__csXbs::after {
+  position: absolute;
+  top: 0;
+  content: '0';
+  width: 100% !important;
+  height: 100% !important;
+  backdrop-filter: blur(0px) !important;
+}
+
+.red-slider .slick-list .slick-active .Home_item__csXbs {
+  position: relative;
+  /* right: 25px; */
+  transition: 0.4s;
+  width: 390px !important;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  /* width: 300px !important; */
+  /* backdrop-filter: blur(20px) !important; */
+  background-color: #ffffff !important;
+}
+
+/* Light Mode Styles */
+
+
+:root {
+  --family1: 'DM Sans', sans-serif;
+  --brand_color: #E5B80B;
+  --font_color1: #000000;
+
+}
+
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  background-color: #0a0404 !important;
+
+}
+
+@media screen and (max-width: 575px) {
+  .red-slider .slick-list {
+    transform: translate3d(0, 0, 0);
+    height: 507px !important;
+    padding-top: 20px !important;
+  
+  }
+  
+.red-slider .slick-list .slick-slide {
+  display: flex;
+  justify-content: center;
+  /* width: 100% !important; */
+  /* backdrop-filter: blur(20px) !important; */
+
+}
+  .red-slider .slick-list .slick-active .Home_item__csXbs {
+ 
+  }
+  .red-slider .slick-list .slick-active .Home_item__csXbs {
+   width: 100% !important;
+  }
+.red-slider .slick-list .slick-active .Home_item__csXbs::after {
+  position: absolute;
+  top: 0;
+  content: '0';
+  width: 100% !important;
+  height: 100% !important;
+  backdrop-filter: blur(0px) !important;
+}
+
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+
+li {
+  list-style: none;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+
+}
+
+::-webkit-scrollbar-track {
+  background-color: #333333;
+}
+
+/* Change the thumb color (scrollbar handle) */
+::-webkit-scrollbar-thumb {
+  background-color: var(--brand_color);
+  border-radius: 10px;
+  width: 5px;
+}
+
+/* Dark Mode Styles */
+
+
+
+
+body {
+  background: -webkit-gradient(linear,left top,right top,from(#7338e7),to(#0169f9));
+  background: -o-linear-gradient(left,#7338e7 0,#000000 100%) !important;
+  background: linear-gradient(90deg,#36127e,#000000) !important;
+  /* background-color: #0a0404 !important; */
+  /* background: #000000; */
+
+}
+
+
+
+
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+
+    --brand_color: #7338e7 !important;
+    --font_color1: #dfdfdf;
+
+
+
+  }
+}
