@@ -1,6 +1,6 @@
 .contact .contact_left h1{
 
-    background: linear-gradient(90deg,#102b51,#f9bf01);
+    background: linear-gradient(90deg,#0c1592,#cf9905);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     display: inline-block;
@@ -10,6 +10,93 @@
     line-height: 1.15em;
     margin-top: 100px;
 }
+.social_link{
+    display: flex;
+  }
+  .social_link .two{
+    margin-left: 30px;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+  }
+  .social_link .two a{
+    text-decoration: none;
+    margin: 5px;
+    color: #ffffff;
+
+
+  }
+  .social_link .two i{
+    font-size: 22px;
+  }
+  .social_link .two .icon_box{
+    font-size: 22px;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0px !important;
+    padding-bottom: 0px !important;
+  }
+  .social_link .two .icon{
+    text-decoration: none;
+    margin: 30px;
+    color: #ffffff;
+    height: 60px;
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    border: 1px solid #7338e7;
+    background-color: #7338e7;
+    /* background: -webkit-gradient(linear,left top,right top,from(#7338e7),to(#0169f9));
+  background: -o-linear-gradient(left,#7338e7 0,#000000 100%);
+  background: linear-gradient(190deg,#7338e7,#000000); */
+  transition: 0.4s;
+  }
+  .social_link .two .icon:hover{
+    background-color: #7338e7;
+    /* border: 2px solid #000000;
+    background: -webkit-gradient(linear,left top,right top,from(#7338e7),to(#0169f9));
+  background: -o-linear-gradient(left,#7338e7 0,#000000 100%);
+  background: linear-gradient(190deg,#7338e7,#000000); */
+  }
+.buttion_primary h6{
+    text-decoration: none;
+    position: relative;
+    top:5px;
+    color: rgb(250, 250, 250);
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: .3em;
+    cursor: pointer;
+  }
+   .buttion_primary{
+    text-decoration: none;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  
+    width: 180px;
+    height: 50px;
+    border-radius: 40px;
+    background: var(--brand_color);
+    background-clip: border-box;
+  /* -webkit-background-clip: text; */
+  /* -webkit-text-fill-color: transparent; */
+    display: flex;
+  
+    justify-content: center;
+    align-items: center;
+    margin-left: 0px !important;
+    font-family: var(--family1);
+  
+    font-weight: 500;
+    padding-right: 0px !important;
+    text-transform: uppercase;
+    top: 10px !important;
+    margin-left: 0px !important;
+    margin-bottom: 30px;
+  
+  }
 .contact{
     margin-bottom: 100px;
 }
@@ -31,7 +118,7 @@
 }
 .contact .contact_left .from p{
     font-size: 14px;
-    color: rgb(0, 0, 0);
+    color: rgb(214, 214, 214);
     font-weight: 600;
     letter-spacing: 0.2em !important;
     font-family: var(--family1);
@@ -48,6 +135,7 @@
     width: 100%;
     border: 1px solid rgba(248, 248, 255, 0);
     outline: 0;
+    color: rgb(175, 175, 175);
     background-color: rgba(240, 248, 255, 0);
 }
 
@@ -56,6 +144,7 @@
     border: 1px solid rgba(248, 248, 255, 0);
     outline: 0;
     background-color: rgba(240, 248, 255, 0);
+    color: rgb(175, 175, 175);
 }
 
 .contact .contact_left .from .send{

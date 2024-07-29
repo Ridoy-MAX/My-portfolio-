@@ -19,12 +19,53 @@ const one = () => {
                                             initial={{ y: 100, opacity: 0, }}
                                             animate={{ y: 0, opacity: 1 }}
                                             transition={{ ease: "easeOut", duration: 0.6 }}>
-                                            <h1>About </h1>
-                                            <h2>Trust in a name</h2>
-                                            <p>The name Synack comes from a cornerstone of cybersecurity. The “three-way handshake” used to establish trusted network connections has synchronize and acknowledge steps for transferring information between sender and receiver. In that constant flow of data, we saw the potential to unite technology and human intelligence in a different kind of handshake that would revolutionize the cybersecurity world: <strong>Octagram</strong>.</p>
+                                            <h1>About Me</h1>
+                                            {/* <h2>Trust in a name</h2> */}
+                                            <p>With three years of development experience, I excel in creating robust web applications. Skilled in PHP, RESTful APIs, Eloquent ORM, and authentication systems, I ensure seamless front-end and back-end integration. My expertise includes performance optimization, debugging, and Git version control, delivering high-quality, client-focused solutions
+                                                I love to Develop interesting and unique design. I also like to challenge myself to learn new things And I crave for new experiences And Challenges.
+                                            </p>
 
 
                                         </motion.div>
+
+
+                                        <div className='mt-5'>
+
+                                            <div className={Style.social_link}>
+                                                <div className={Style.one}>
+                                                    <motion.a
+                                                        initial={{ opacity: 0, scale: 0.5 }}
+                                                        animate={{ opacity: 1, scale: 1 }}
+                                                        whileHover={{ scale: 1.1 }}
+                                                        whileTap={{ scale: 1 }}
+                                                        transition={{ type: "spring", stiffness: 400, damping: 17 }}
+
+                                                        className={Style.buttion_primary} >
+
+                                                        <h6>Download CV <i className="fa-solid fa-download"></i> </h6>
+
+                                                    </motion.a>
+                                                </div>
+                                                <div className={Style.two}>
+                                                    <div className={Style.icon}>
+                                                        <a href=""> <i className="fa-brands fa-linkedin-in"></i></a>
+
+                                                    </div>
+                                                    <div className={Style.icon}>
+                                                        <a href=""> <i className="fa-brands fa-whatsapp"></i></a>
+
+                                                    </div>
+                                                    <div className={Style.icon}>
+                                                        <a href=""> <i className="fa-brands fa-github"></i></a>
+
+                                                    </div>
+                                                    <div className={Style.icon}>
+                                                        <a href=""> <i className="fa-solid fa-at"></i></a>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
 
                                     <div className="col-md-6 mt-5">

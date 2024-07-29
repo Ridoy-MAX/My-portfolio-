@@ -123,126 +123,13 @@ const Navbar = () => {
 
                           <li>
                             <Link href="/#work" className={styles.buttion_primary_none}>
-                              <p>  Works       
+                              <p> My Works       
                               </p>
 
                        
                             </Link>
 
-                            {/* <div className={styles.sub_menu_list}>
-                              <div className="container">
-                                <div className="row">
-                                  <h6> My Works</h6>
 
-                                  <div className={styles.services}>
-                                    <div className="row">
-                                      <div className="col">
-                                        <div className="row">
-                                          <div className="col-md-4">
-                                          <Link href="/cyber" >
-                                            <div className="row">
-                                            <div className={styles.one}>
-                                                <div className={styles.img}>
-                                                  <img src="three.svg" alt="" />
-                                                </div>
-                                                <div className={styles.text}>
-                                                  <h4>  Cyber Security & VAPT</h4>
-                                                  <p>Our team can secure your IT infrastructure with professional testing and assessments.</p>
-                                                </div>
-                                              </div>
-                                            </div>
-                                           
-
-                                            </Link>
-                                          </div>
-                                          <div className="col-md-4">
-                                          <Link href="/web" className={styles.service_link}>
-                                              <div className={styles.one}>
-                                                <div className={styles.img}>
-                                                  <img src="one.svg" alt="" />
-                                                </div>
-                                                <div className={styles.text}>
-                                                  <h4> Web Design & Dev</h4>
-                                                  <p>Our programmers are ready to develop your web site or application with expertise and attention.</p>
-                                                </div>
-                                              </div>
-
-                                            </Link>
-                                          </div>
-                                          <div className="col-md-4">
-                                          <Link href="/cyber" className={styles.service_link}>
-                                              <div className={styles.one}>
-                                                <div className={styles.img}>
-                                                  <img src="one.svg" alt="" />
-                                                </div>
-                                                <div className={styles.text}>
-                                                  <h4>Graphics Design</h4>
-                                                  <p>From eye catching social media posts to Logo design, we got you covered..</p>
-                                                </div>
-                                              </div>
-
-                                            </Link>
-                                          </div>
-                                          <div className="col-md-4">
-                                          <Link href="/web" className={styles.service_link}>
-                                              <div className={styles.one}>
-                                                <div className={styles.img}>
-                                                  <img src="one.svg" alt="" />
-                                                </div>
-                                                <div className={styles.text}>
-                                                  <h4>  Mobile App Development</h4>
-                                                  <p>We are always ready to develop your desired mobile application.</p>
-                                                </div>
-                                              </div>
-
-                                            </Link>
-                                          </div>
-                                          <div className="col-md-4">
-                                          <Link href="/cyber" className={styles.service_link}>
-                                              <div className={styles.one}>
-                                                <div className={styles.img}>
-                                                  <img src="one.svg" alt="" />
-                                                </div>
-                                                <div className={styles.text}>
-                                                  <h4>Hardware Import</h4>
-                                                  <p>We import high quality and in-budget IT devices from multiple trusted vendors.</p>
-                                                </div>
-                                              </div>
-
-                                            </Link>
-                                          </div>
-                                          <div className="col-md-4">
-                                            
-                                          <Link href="/web" className={styles.service_link}>
-                                              <div className={styles.one}>
-                                                <div className={styles.img}>
-                                                  <img src="one.svg" alt="" />
-                                                </div>
-                                                <div className={styles.text}>
-                                                  <h4>Hardware Import</h4>
-                                                  <p>We import high quality and in-budget IT devices from multiple trusted vendors.</p>
-                                                </div>
-                                              </div>
-
-                                            </Link>
-                                          </div>
-                                     
-
-
-                                        </div>
-                                      </div>
-                                    </div>
-
-
-                                  </div>
-                                </div>
-                              </div>
-
-
-
-
-
-                            </div> */}
 
 
                           </li>
@@ -252,10 +139,11 @@ const Navbar = () => {
                             </Link>
                           </li>
                           <li>
-                            <Link href="/why_octagram" className={styles.buttion_primary_none}>
+                            <Link href="/exprience" className={styles.buttion_primary_none}>
                               <p> Experience</p>
                             </Link>
                           </li>
+                        
                           {/* <li>
                             <Link href="/why_octagram" className={styles.buttion_primary_none}>
                               <p> Why Me</p>
@@ -291,7 +179,7 @@ const Navbar = () => {
                               <Link
                                 href="/contact" className={styles.buttion_primary} >
                                 <p>
-                                  Contact </p>
+                                  Hire me </p>
 
                               </Link>
 

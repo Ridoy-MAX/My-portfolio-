@@ -1,6 +1,6 @@
 import React from 'react'
 import Why from "@/component/Why_octagram/index";
-const why_octagram = () => {
+const exprience = () => {
   return (
     <div>
         <Why/>
@@ -8,4 +8,4 @@ const why_octagram = () => {
   )
 }
 
-export default why_octagram
+export default exprience
