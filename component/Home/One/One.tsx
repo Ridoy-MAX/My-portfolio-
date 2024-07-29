@@ -68,7 +68,7 @@ const One = () => {
         </div>
         <div className="col-md-6">
           <div className={Style.photo_my}>
-            <img src="me.jpeg" alt="" className={Style.my_image} />
+            <img src="me.jpg" alt="" className={Style.my_image} />
 
           </div>
 
