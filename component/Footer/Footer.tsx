@@ -39,7 +39,7 @@ const Footer = () => {
                                     <div className="col-md-9">
                                         <div className={Style.content}>
                                             <div className={Style.one}>
-                                                <Link href="#" >
+                                                <Link href="/" >
                                                     <h2>Home</h2>
 
                                                 </Link>
@@ -50,7 +50,7 @@ const Footer = () => {
                                             </div>
 
                                             <div className={Style.one}>
-                                                <Link href="#" >
+                                                <Link href="/#work" >
 
                                                     <h2>Works</h2>
 
@@ -61,7 +61,7 @@ const Footer = () => {
                                             </div>
                                             <div className={Style.one}>
 
-                                                <Link href="#" >
+                                                <Link href="/#skill" >
                                                     <h2>Skills</h2>
 
 
@@ -70,7 +70,7 @@ const Footer = () => {
 
                                             </div>
                                             <div className={Style.one}>
-                                                <Link href="#" >
+                                                <Link href="/exprience" >
                                                     <h2>
                                                         Experience</h2>
 
@@ -78,7 +78,7 @@ const Footer = () => {
 
                                             </div>
                                             <div className={Style.one}>
-                                                <Link href="#" >
+                                                <Link href="/about" >
 
                                                     <h2>
                                                         About</h2>
@@ -107,6 +107,8 @@ const Footer = () => {
 
                             </div>
                         </div>
+
+                        <h6>© 2023 Ridoy Hasan</h6>
                     </div>
 
 

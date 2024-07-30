@@ -88,7 +88,11 @@ const Navbar = () => {
 
 
                       <div className="d-flex justify-content-center">
-                        <Link href="/" className={styles.logo_email_link} >
+                        <Link 
+                                              href="mailto:pou4w98y@gmail.com?subject=Hello&body=I%20would%20like%20to%20contact%20you%20regarding%20your%20portfolio."
+                                              target="_blank" // Opens the email client in a new window/tab
+                                              rel="noopener noreferrer" // Security attribute
+                        className={styles.logo_email_link} >
 
                           {/* <Image
                             src={logo}

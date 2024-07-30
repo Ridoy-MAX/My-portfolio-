@@ -1,6 +1,12 @@
 .logo_email{
     display: flex;
   }
+
+  .footer_body h6{
+    text-align: center;
+    color: #cbcbcb;
+    margin-top: 20px;
+  }
   .logo_email_link{
     text-decoration: none;
     display: flex;
