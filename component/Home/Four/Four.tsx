@@ -26,7 +26,7 @@ const Four = () => {
         setActiveTab(tab);
     };
 
-    // Sample project data for demonstration
+    // laravel project
     const projects: Project[] = [
         {
             imageSrc: 'project-one.png',
@@ -42,7 +42,7 @@ const Four = () => {
         },
         // Add more projects here as needed
         {
-            imageSrc: 'project-Two.png',
+            imageSrc: 'project-two.png',
             title: 'Virtual Bones',
             description:
                 'With an intuitive interface and powerful features, Virtual Bones is designed to drive efficiency in fracture management',
@@ -74,6 +74,72 @@ const Four = () => {
             previewLink: 'https://commzy.sifztech.com/',
             skills: [
                 { name: 'Laravel', iconClass: 'fa-brands fa-laravel' },
+                { name: 'JavaScript', iconClass: 'fa-brands fa-js' },
+                { name: 'Bootstrap', iconClass: 'fa-brands fa-bootstrap' },
+            ],
+        },
+
+    ];
+    // frontend project
+    const front_projects: Project[] = [
+        {
+            imageSrc: 'front-project-one.png',
+            title: 'Octagram Limited',
+            description:
+                'This is a company portfolio that offers penetration testing and vulnerability management. We identify your most critical vulnerabilities and monitor your progress over time.',
+            previewLink: 'https://octagram-git-main-ridoy-max.vercel.app/',
+            skills: [
+                { name: 'React', iconClass: 'fa-brands fa-react' },
+                { name: 'TypeScript', iconClass: 'fa-brands fa-js' },
+                { name: 'Bootstrap', iconClass: 'fa-brands fa-bootstrap' },
+            ],
+        },
+     
+        {
+            imageSrc: 'front-project-five.png',
+            title: 'Game Network',
+            description:
+                'This is an online game streaming platform where gamers can play and stream their games. They can also interact with viewers through features like super chat.',
+            previewLink: 'https://game-network.vercel.app/',
+            skills: [
+               
+                { name: 'JavaScript', iconClass: 'fa-brands fa-js' },
+                { name: 'Bootstrap', iconClass: 'fa-brands fa-bootstrap' },
+            ],
+        },
+ 
+        {
+            imageSrc: 'front-project-two.png',
+            title: 'Pepesync ',
+            description:
+                'Solution & work',
+            previewLink: 'https://game-kyby-git-main-ridoymaxs-projects.vercel.app/',
+            skills: [
+                { name: 'React', iconClass: 'fa-brands fa-react' },
+                { name: 'TypeScript', iconClass: 'fa-brands fa-js' },
+                { name: 'Bootstrap', iconClass: 'fa-brands fa-bootstrap' },
+            ],
+        },
+        {
+            imageSrc: 'front-project-four.png',
+            title: 'Orbital ',
+            description:
+                'Digital Consulting Agency.Unique Business Consulting.',
+            previewLink: 'https://ridoy-max.github.io/orbital/',
+            skills: [
+            
+                { name: 'JavaScript', iconClass: 'fa-brands fa-js' },
+                { name: 'Bootstrap', iconClass: 'fa-brands fa-bootstrap' },
+            ],
+        },
+        {
+            imageSrc: 'front-project-six.png',
+            title: 'Influencer ',
+            description:
+                ' A beauty and lifestyle influencer portfolio.',
+            previewLink: 'https://ridoy-max.github.io/influencer/index.html',
+            skills: [
+            
                 { name: 'JavaScript', iconClass: 'fa-brands fa-js' },
                 { name: 'Bootstrap', iconClass: 'fa-brands fa-bootstrap' },
             ],
@@ -126,156 +192,16 @@ const Four = () => {
                         <div className={styles.red}>
                             <div className="container">
                                 <div className="row">
-                                    <div className="col-md-4">
-                                        <div className="">
-                                            <div className={styles.card_project}>
-                                                <img src="front-project-one.png" alt="" className={styles.project_image} />
-                                                <div className={styles.card_details}>
-                                                    <h2>Octagram Limited </h2>
-                                                    <p>This is a company portfolio that offers penetration testing and vulnerability management. We identify your most critical vulnerabilities and monitor your progress over time.</p>
-
-                                                    <div className={styles.preview_details}>
-
-                                                        <div className={styles.preview}>
-                                                            <a className={styles.button} href='https://octagram-git-main-ridoy-max.vercel.app/' target='blank'>
-                                                                Preview
-                                                            </a>
-                                                        </div>
-
-                                                        <div className={styles.skills}>
-
-                                                            <div className={styles.card_skill}>    <i className="fa-brands fa-react"></i>  React</div>
-                                                            <div className={styles.card_skill}>   <i className="fa-brands fa-js"></i>  TypeScript</div>
-                                                            <div className={styles.card_skill}>   <i className="fa-brands fa-bootstrap"></i> Bootstrap</div>
-                                                        </div>
-                                                    </div>
-
-
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="col-md-4">
-                                        <div className="">
-                                            <div className={styles.card_project}>
-                                                <img src="front-project-five.png" alt="" className={styles.project_image} />
-                                                <div className={styles.card_details}>
-                                                    <h2>Game Network </h2>
-                                                    <p>This is an online game streaming platform where gamers can play and stream their games. They can also interact with viewers through features like super chat.</p>
-
-                                                    <div className={styles.preview_details}>
-
-                                                        <div className={styles.preview}>
-                                                            <a className={styles.button} href='https://game-network.vercel.app/' target='blank'>
-                                                                Preview
-                                                            </a>
-                                                        </div>
-
-                                                        <div className={styles.skills}>
-
-                                                            {/* <div className={styles.card_skill}>    <i className="fa-brands fa-react"></i>  React</div> */}
-                                                            <div className={styles.card_skill}>   <i className="fa-brands fa-js"></i>  JavaScript</div>
-                                                            <div className={styles.card_skill}>   <i className="fa-brands fa-bootstrap"></i> Bootstrap</div>
-                                                        </div>
-                                                    </div>
-
-
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="col-md-4">
-                                        <div className="">
-                                            <div className={styles.card_project}>
-                                                <img src="front-project-two.png" alt="" className={styles.project_image} />
-                                                <div className={styles.card_details}>
-                                                    <h2>Pepesync </h2>
-                                                    <p>Solution & work</p>
-
-                                                    <div className={styles.preview_details}>
-
-                                                        <div className={styles.preview}>
-                                                            <a className={styles.button} href='https://game-kyby-git-main-ridoymaxs-projects.vercel.app/' target='blank'>
-                                                                Preview
-                                                            </a>
-                                                        </div>
-
-                                                        <div className={styles.skills}>
-
-                                                            <div className={styles.card_skill}>    <i className="fa-brands fa-react"></i>  React</div>
-                                                            <div className={styles.card_skill}>   <i className="fa-brands fa-js"></i>  TypeScript</div>
-                                                            <div className={styles.card_skill}>   <i className="fa-brands fa-bootstrap"></i> Bootstrap</div>
-                                                        </div>
-                                                    </div>
-
-
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="col-md-4">
-                                        <div className="">
-                                            <div className={styles.card_project}>
-                                                <img src="front-project-four.png" alt="" className={styles.project_image} />
-                                                <div className={styles.card_details}>
-                                                    <h2>Orbital </h2>
-                                                    <p>Digital Consulting Agency.Unique Business Consulting.</p>
-
-                                                    <div className={styles.preview_details}>
-
-                                                        <div className={styles.preview}>
-                                                            <a className={styles.button} href='https://ridoy-max.github.io/orbital/' target='blank'>
-                                                                Preview
-                                                            </a>
-                                                        </div>
-
-                                                        <div className={styles.skills}>
-
-                                                            {/* <div className={styles.card_skill}>    <i className="fa-brands fa-react"></i>  React</div> */}
-                                                            <div className={styles.card_skill}>   <i className="fa-brands fa-js"></i>  JavaScript</div>
-                                                            <div className={styles.card_skill}>   <i className="fa-brands fa-bootstrap"></i> Bootstrap</div>
-                                                        </div>
-                                                    </div>
-
-
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="col-md-4">
-                                        <div className="">
-                                            <div className={styles.card_project}>
-                                                <img src="front-project-six.png" alt="" className={styles.project_image} />
-                                                <div className={styles.card_details}>
-                                                    <h2>Influencer </h2>
-                                                    <p> A beauty and lifestyle influencer portfolio.</p>
-
-                                                    <div className={styles.preview_details}>
-
-                                                        <div className={styles.preview}>
-                                                            <a className={styles.button} href='https://ridoy-max.github.io/influencer/index.html' target='blank'>
-                                                                Preview
-                                                            </a>
-                                                        </div>
-
-                                                        <div className={styles.skills}>
-
-                                                            {/* <div className={styles.card_skill}>    <i className="fa-brands fa-react"></i>  React</div> */}
-                                                            <div className={styles.card_skill}>   <i className="fa-brands fa-js"></i>  JavaScript</div>
-                                                            <div className={styles.card_skill}>   <i className="fa-brands fa-bootstrap"></i> Bootstrap</div>
-                                                        </div>
-                                                    </div>
-
-
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
+                                {front_projects.map((project, index) => (
+                                        <ProjectCard
+                                            key={index}
+                                            imageSrc={project.imageSrc}
+                                            title={project.title}
+                                            description={project.description}
+                                            previewLink={project.previewLink}
+                                            skills={project.skills}
+                                        />
+                                    ))}
                                 </div>
                             </div>
                         </div>
