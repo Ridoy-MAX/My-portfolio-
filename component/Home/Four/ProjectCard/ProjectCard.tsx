@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from '../../Home.module.css'; // Import CSS module styles
 
 // Define the type for a single skill
@@ -23,10 +23,30 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   previewLink,
   skills,
 }) => {
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  const handleImageLoad = () => {
+    setImageLoaded(true);
+  };
+
   return (
     <div className="col-md-4">
       <div className={styles.card_project}>
-        <img src={imageSrc} alt={title} className={styles.project_image} />
+        {/* Preloader */}
+        {!imageLoaded && (
+          <div className={styles.image_preloader}>
+            <div className={styles.spinner}></div>
+          </div>
+        )}
+        
+        {/* Image */}
+        <img
+          src={imageSrc}
+          alt={title}
+          className={`${styles.project_image} ${imageLoaded ? styles.image_visible : styles.image_hidden}`}
+          onLoad={handleImageLoad}
+        />
+
         <div className={styles.card_details}>
           <h2>{title}</h2>
           <p>{description}</p>

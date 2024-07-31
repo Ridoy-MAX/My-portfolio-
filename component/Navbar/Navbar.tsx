@@ -47,16 +47,16 @@ const Navbar = () => {
 
       <div >
         <header className={`${styles.header} ${scrolled ? styles.scrolledNavbar : ''}`}>
-        {/* <i className={`fa-regular fa-user ${styles.menuser}`}></i> */}
+          {/* <i className={`fa-regular fa-user ${styles.menuser}`}></i> */}
 
           <Link href="/" className={styles.mobile_logo}>
             <div className={styles.logo}>
               <img src="oc2.png" alt="" className={styles.one} />
-              <img src="black.png" alt=""  className={styles.two}/>
+              <img src="black.png" alt="" className={styles.two} />
             </div>
           </Link>
 
-         
+
 
           <i
             className={`fa-solid fa-bars ${styles.menuToggle}`}
@@ -88,11 +88,11 @@ const Navbar = () => {
 
 
                       <div className="d-flex justify-content-center">
-                        <Link 
-                                              href="mailto:pou4w98y@gmail.com?subject=Hello&body=I%20would%20like%20to%20contact%20you%20regarding%20your%20portfolio."
-                                              target="_blank" // Opens the email client in a new window/tab
-                                              rel="noopener noreferrer" // Security attribute
-                        className={styles.logo_email_link} >
+                        <Link
+                          href="mailto:pou4w98y@gmail.com?subject=Hello&body=I%20would%20like%20to%20contact%20you%20regarding%20your%20portfolio."
+                          target="_blank" // Opens the email client in a new window/tab
+                          rel="noopener noreferrer" // Security attribute
+                          className={styles.logo_email_link} >
 
                           {/* <Image
                             src={logo}
@@ -109,7 +109,7 @@ const Navbar = () => {
 
                           /> */}
                           <div className={styles.logo_email}>
-                          <i className="fa-solid fa-at"></i>
+                            <i className="fa-solid fa-at"></i>
                             <p>pou4w98y@gmail.com</p>
 
                           </div>
@@ -127,10 +127,10 @@ const Navbar = () => {
 
                           <li>
                             <Link href="/#work" className={styles.buttion_primary_none}>
-                              <p> My Works       
+                              <p> My Works
                               </p>
 
-                       
+
                             </Link>
 
 
@@ -147,7 +147,7 @@ const Navbar = () => {
                               <p> Experience</p>
                             </Link>
                           </li>
-                        
+
                           {/* <li>
                             <Link href="/why_octagram" className={styles.buttion_primary_none}>
                               <p> Why Me</p>
