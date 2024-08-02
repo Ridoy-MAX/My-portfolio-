@@ -180,11 +180,40 @@
 }
 @media screen and (max-width: 575px) {
     /* .contact .contact_right  */
+    .social_link .two .icon_box{
+      font-size: 18px;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      margin-bottom: 0px !important;
+      padding-bottom: 0px !important;
+    }
+    .social_link .two .icon{
+      text-decoration: none;
+      margin: 10px;
+      color: #ffffff;
+      height: 60px;
+      width: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 100%;
+      border: 1px solid #7338e7;
+      background-color: #7338e7;
+    
+    transition: 0.4s;
+    }
+    .social_link .two{
+      margin-left: 0px;
+      margin-top: 0px;
+      display: flex;
+      flex-direction: column;
+    }
     .contact .contact_right {
-        position: absolute;
+        position: relative;
         top: 0;
         z-index: -9;
-        margin-top: 150px;
+        margin-top: 0px;
      }
     .contact .contact_left h2{
         font-family: var(--family1);

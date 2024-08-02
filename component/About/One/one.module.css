@@ -165,12 +165,51 @@ background: linear-gradient(190deg,#7338e7,#000000); */
 }
 
 @media screen and (max-width: 575px) {
+  .photo_my {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-height: 400px;
+    margin: auto;
+    border-radius: 35px;
+    overflow: hidden;
+    position: relative;
+    padding: 4px;
+    /* animation: borderAnimation 6s linear infinite; */
+  
+  }
+  
+  .photo_my::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    z-index: -1;
+    border-radius: inherit;
+    background: linear-gradient(90deg, #7338e7, #f9bf01);
+    /* animation: borderAnimation 6s linear infinite; */
+  
+  }
+
+  .social_link{
+    display: flex;
+    flex-direction: column;
+  }
+  .social_link .two{
+    margin-left: 0px;
+    display: flex;
+  }
+
     .About_section_one .Heading_one img{
-        margin-top: 80px;
+        /* margin-top: 80px;
         margin-bottom: 80px;
         position: absolute;
-        top: 0;
-        z-index: -9;
+        top: 0; */
+        z-index: 1;
     }
     .About_section_one .Heading_one h1{
         background: linear-gradient(90deg,#102b51,#f9bf01);
@@ -196,7 +235,7 @@ background: linear-gradient(190deg,#7338e7,#000000); */
     font-weight: 500;
     font-family: var(--family1);
     font-size: 13px;
-    color: #000000;
+    color: #ebebeb;
     padding-right: 2px;
     padding-bottom: 30px;
 }

@@ -308,8 +308,16 @@ z-index: 999999999999999;
 .mobile_logo{
   display: none;
 }
-@media screen and (max-width: 768px) {
 
+.logo_email_link_m{
+display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .logo_email_link_m{
+    display: block;
+    text-decoration: none;
+    }
   
 .header .nav .menu .nav_item ul li a:hover::before{
   width: 0%!important;
@@ -523,6 +531,10 @@ z-index: 999999999999999;
 
   }
 
+  .menuToggle{
+    color: #fff;
+  }
+
   .header .menu .close i {
     margin-left: 5px;
   }
@@ -535,6 +547,7 @@ z-index: 999999999999999;
   .header .menuToggle {
     opacity: 1;
     display: block;
+    color: #dadada;
   }
 
   .header {
@@ -544,7 +557,7 @@ z-index: 999999999999999;
   }
 
   .header i {
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
   }
 
   .header .header__logo .logo img {

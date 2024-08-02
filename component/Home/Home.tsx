@@ -51,8 +51,11 @@ const Home = () => {
 
             </div>
 
-
+            <div className="container">
             <Two />
+
+            </div>
+
 
         
             <Four />

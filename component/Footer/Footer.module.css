@@ -235,6 +235,12 @@
 
 
 @media screen and (max-width: 575px) {
+    .footer_body h6{
+        text-align: center;
+        color: #cbcbcb;
+        margin-top: 20px;
+        padding-bottom: 15px;
+      }
     .footer_body .content .one .link a {
         display: flex;
         text-decoration: none;

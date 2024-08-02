@@ -81,6 +81,7 @@ const One = () => {
           </motion.div>
         </div>
         <div className="col-md-6 mt-5">
+          
           <div className={Style.photo_my}>
             <img src="me.jpg" alt="" className={Style.my_image} />
 

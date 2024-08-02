@@ -49,12 +49,20 @@ const Navbar = () => {
         <header className={`${styles.header} ${scrolled ? styles.scrolledNavbar : ''}`}>
           {/* <i className={`fa-regular fa-user ${styles.menuser}`}></i> */}
 
-          <Link href="/" className={styles.mobile_logo}>
-            <div className={styles.logo}>
-              <img src="oc2.png" alt="" className={styles.one} />
-              <img src="black.png" alt="" className={styles.two} />
-            </div>
-          </Link>
+          <Link
+                          href="mailto:pou4w98y@gmail.com?subject=Hello&body=I%20would%20like%20to%20contact%20you%20regarding%20your%20portfolio."
+                          target="_blank" // Opens the email client in a new window/tab
+                          rel="noopener noreferrer" // Security attribute
+                          className={styles.logo_email_link_m} >
+
+                  
+                          <div className={styles.logo_email}>
+                            <i className="fa-solid fa-at"></i>
+                            <p>pou4w98y@gmail.com</p>
+
+                          </div>
+
+                        </Link>
 
 
 
@@ -94,20 +102,7 @@ const Navbar = () => {
                           rel="noopener noreferrer" // Security attribute
                           className={styles.logo_email_link} >
 
-                          {/* <Image
-                            src={logo}
-                            alt="Picture of the author"
-                            width={50}
-
-                          />
-
-                          <Image 
-                          className="ms-2"
-                            src={logo2}
-                            alt="Picture of the author"
-                            width={120} 
-
-                          /> */}
+                  
                           <div className={styles.logo_email}>
                             <i className="fa-solid fa-at"></i>
                             <p>pou4w98y@gmail.com</p>
@@ -121,12 +116,12 @@ const Navbar = () => {
                         <ul className={styles.list}>
 
                           <li className={styles.menu_item_has_children}>
-                            <Link href="/" className={styles.buttion_primary_none}> <p>Home</p></Link>
+                            <Link href="/" className={styles.buttion_primary_none}     onClick={handleMenuToggle}> <p>Home</p></Link>
 
                           </li>
 
                           <li>
-                            <Link href="/#work" className={styles.buttion_primary_none}>
+                            <Link href="/#work" className={styles.buttion_primary_none}     onClick={handleMenuToggle}>
                               <p> My Works
                               </p>
 
@@ -138,12 +133,12 @@ const Navbar = () => {
 
                           </li>
                           <li>
-                            <Link href="/#skill" className={styles.buttion_primary_none}>
+                            <Link href="/#skill" className={styles.buttion_primary_none}   onClick={handleMenuToggle} >
                               <p> Skills</p>
                             </Link>
                           </li>
                           <li>
-                            <Link href="/exprience" className={styles.buttion_primary_none}>
+                            <Link href="/exprience" className={styles.buttion_primary_none} onClick={handleMenuToggle}>
                               <p> Experience</p>
                             </Link>
                           </li>
@@ -154,7 +149,7 @@ const Navbar = () => {
                             </Link>
                           </li> */}
                           <li>
-                            <Link href="/about" className={styles.buttion_primary_none}>
+                            <Link href="/about" className={styles.buttion_primary_none} onClick={handleMenuToggle}>
                               <p>   About</p>
                             </Link>
                           </li>
@@ -181,7 +176,7 @@ const Navbar = () => {
                             <li>
 
                               <Link
-                                href="/contact" className={styles.buttion_primary} >
+                                href="/contact" className={styles.buttion_primary} onClick={handleMenuToggle}>
                                 <p>
                                   Hire me </p>
 
