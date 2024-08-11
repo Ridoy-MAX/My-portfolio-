@@ -184,7 +184,7 @@ background: linear-gradient(190deg,#7338e7,#000000); */
     align-items: center;
     width: 100%;
     /* max-height: 400px; */
-    height: auto;
+    height: auto !important;
     margin: auto;
     border-radius: 35px;
     overflow: hidden;
@@ -194,6 +194,15 @@ background: linear-gradient(190deg,#7338e7,#000000); */
   
   }
   
+  .photo_my .my_image {
+    content: '';
+
+    border-radius: inherit;
+    border: 4px solid #7338e7;
+    background: linear-gradient(90deg, #7338e7, #f9bf01);
+    /* animation: borderAnimation 6s linear infinite; */
+  
+  }
   .photo_my::before {
     content: '';
     position: absolute;
@@ -203,7 +212,7 @@ background: linear-gradient(190deg,#7338e7,#000000); */
     bottom: -4px;
     z-index: -1;
     border-radius: inherit;
-    background: linear-gradient(90deg, #7338e7, #f9bf01);
+    background: linear-gradient(90deg, #7238e700, #f9bf0100);
     /* animation: borderAnimation 6s linear infinite; */
   
   }

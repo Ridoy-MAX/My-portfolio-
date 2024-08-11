@@ -340,6 +340,13 @@ display: none;
   
 
 
+    .header .nav .menu .nav_item ul li a {
+ 
+      color: white !important;
+      font-size: 19px !important;
+    
+    }
+
 
 .header .nav .menu .nav_item ul li a:hover::before{
   width: 0%!important;
