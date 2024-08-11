@@ -9,20 +9,10 @@ const Footer = () => {
         <div>
             <div className={Style.footer}>
                 <div className='container-fluid' >
-                    <div className={Style.footer_head}>
-                        <div className="row">
-                            <div className="col-md-2 d-flex justify-content-center">
-
-                            </div>
-                            <div className="col-md-9 d-flex justify-content-end">
-
-                            </div>
-                        </div>
-                    </div>
-
+           
                     <div className={Style.footer_body}>
                         <div className="row">
-                            <div className="col-md-2 d-flex justify-content-center">
+                            <div className="col-md-3 d-flex justify-content-center">
                                 <Link href="/" className={Style.footer_logo}>
 
 

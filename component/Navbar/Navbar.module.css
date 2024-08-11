@@ -208,6 +208,25 @@ z-index: 999999999999999;
   position: relative;
 }
 
+
+@media screen and (max-width: 1600px) {
+  .header .nav .menu .nav_item ul li a {
+    text-decoration: none;
+    font-family: var(--family1);
+    color: var(--font_color1);
+    font-size: 14px !important;
+    padding-right: 7px;
+  
+    position: relative;
+  
+    margin-right: 30px;
+  
+  
+    position: relative;
+    top: -4px;
+  }
+}
+
 .header .nav .menu .nav_item ul li a::before{
   position: relative;
   top: 33px;
@@ -319,6 +338,9 @@ display: none;
     text-decoration: none;
     }
   
+
+
+
 .header .nav .menu .nav_item ul li a:hover::before{
   width: 0%!important;
   transition: 0.4s;

@@ -104,7 +104,7 @@
   }
   .card_details .skills .card_skill{
     background: #1e0144;
-    margin: 10px;
+    margin: 5px;
     padding: 7px;
     border-radius: 5px;
     color: rgb(209, 209, 209);
@@ -772,16 +772,16 @@ color: white;
   }
   .home_section_two .head p{
     font-family: var(--family1);
-  color: #555;
+  color: #fafafa;
   font-size: 15px;
-  padding-right: 300px;
+  /* padding-right: 300px; */
   }
   .home_section_two .card{
     cursor: pointer;
       margin-top: 40px;
       border-radius: 25px;
     
-      background-color: #e3e2e2ab;
+      /* background-color: #e3e2e2ab; */
       padding: 14px;
     }
   .home_section_two .card h2{

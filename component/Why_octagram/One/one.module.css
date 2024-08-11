@@ -57,6 +57,15 @@
  margin: 10px;
 }
 
+
+@media screen and (max-width: 1600px) {
+    .why_section_one .heading_two .card .img img{
+      width: 50%;
+      margin: 10px;
+     }
+     
+  }
+  
 .why_section_one .heading_two .card .one{
     display: flex;
     align-items: center;

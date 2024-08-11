@@ -164,6 +164,18 @@ background: linear-gradient(190deg,#7338e7,#000000); */
     margin-bottom: 80px;
 }
 
+
+
+
+@media screen and (max-width: 1600px) {
+  .About_section_one .Heading_one p{
+    font-weight: 500;
+    font-family: var(--family1);
+    font-size: 14px;
+    color: #e0e0e0;
+    padding-right: 45px;
+}
+}
 @media screen and (max-width: 575px) {
   .photo_my {
     margin-top: 100px;
