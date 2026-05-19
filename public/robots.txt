@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ridoy-hasan.vercel.app/sitemap.xml

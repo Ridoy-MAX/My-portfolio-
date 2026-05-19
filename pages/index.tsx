@@ -1,11 +1,11 @@
-import Home from "@/component/Home/Home";
+import Home from '@/component/Home/Home';
+import SEO from '@/component/SEO/SEO';
 
-const IndexPage = () => {
-  return (
-    <>
-      <Home />
-    </>
-  );
-};
+const IndexPage = () => (
+  <>
+    <SEO />
+    <Home />
+  </>
+);
 
 export default IndexPage;

@@ -1,27 +1,8 @@
 import '@/styles/globals.css';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import type { AppProps } from 'next/app';
-import "bootstrap/dist/css/bootstrap.css";
-import { useState, useEffect } from 'react';
-import { useRouter } from 'next/router';
-
-
 
 export default function App({ Component, pageProps }: AppProps) {
-
-  const router = useRouter();
-
-
-
-  useEffect(() => {
-
-    "bootstrap/dist/js/bootstrap.js";
-
-  }, []);
-
-  return (
-    <div>
-
-      <Component {...pageProps} />
-    </div>
-  );
+  return <Component {...pageProps} />;
 }

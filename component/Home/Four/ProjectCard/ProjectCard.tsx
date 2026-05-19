@@ -1,13 +1,12 @@
-import React, { useState } from 'react';
-import styles from '../../Home.module.css'; // Import CSS module styles
+import { useState } from 'react';
+import { motion } from 'framer-motion';
+import styles from '../../Home.module.css';
 
-// Define the type for a single skill
 interface Skill {
   name: string;
   iconClass: string;
 }
 
-// Define the type for the component's props
 interface ProjectCardProps {
   imageSrc: string;
   title: string;
@@ -25,55 +24,50 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 }) => {
   const [imageLoaded, setImageLoaded] = useState(false);
 
-  const handleImageLoad = () => {
-    setImageLoaded(true);
-  };
-
   return (
-    <div className="col-md-4">
-      <div className={styles.card_project}>
-        {/* Preloader */}
-        {!imageLoaded && (
-          <div className={styles.image_preloader}>
-            <div className={styles.spinner}></div>
-          </div>
-        )}
-        
-        {/* Image */}
+    <motion.article
+      className={styles.projectCard}
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+      whileHover={{ y: -6 }}
+    >
+      <div className={styles.projectImageWrap}>
+        {!imageLoaded && <div className={styles.projectImageSkeleton} />}
         <img
           src={imageSrc}
           alt={title}
-          className={`${styles.project_image} ${imageLoaded ? styles.image_visible : styles.image_hidden}`}
-          onLoad={handleImageLoad}
+          className={`${styles.projectImage} ${imageLoaded ? styles.imageVisible : ''}`}
+          onLoad={() => setImageLoaded(true)}
+          loading="lazy"
         />
-
-        <div className={styles.card_details}>
-          <h2>{title}</h2>
-          <p>{description}</p>
-
-          <div className={styles.preview_details}>
-            <div className={styles.preview}>
-              <a
-                className={styles.button}
-                href={previewLink}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Preview
-              </a>
-            </div>
-
-            <div className={styles.skills}>
-              {skills.map((skill, index) => (
-                <div key={index} className={styles.card_skill}>
-                  <i className={skill.iconClass}></i> {skill.name}
-                </div>
-              ))}
-            </div>
-          </div>
+        <div className={styles.projectImageOverlay}>
+          <a
+            href={previewLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.projectPreview}
+          >
+            Live Preview
+            <i className="fa-solid fa-arrow-up-right-from-square" />
+          </a>
         </div>
       </div>
-    </div>
+
+      <div className={styles.projectBody}>
+        <h3 className={styles.projectTitle}>{title}</h3>
+        <p className={styles.projectDesc}>{description}</p>
+        <div className={styles.projectSkills}>
+          {skills.map((skill) => (
+            <span key={skill.name} className={styles.projectSkillChip}>
+              <i className={skill.iconClass} />
+              {skill.name}
+            </span>
+          ))}
+        </div>
+      </div>
+    </motion.article>
   );
 };
 

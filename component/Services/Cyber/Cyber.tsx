@@ -1,240 +1,125 @@
-import React from 'react'
 import { motion } from 'framer-motion';
-import Navbar from '../../Navbar/Navbar'
-import Footer from '../../Footer/Footer'
-import Style from '../service.module.css'
+import Navbar from '../../Navbar/Navbar';
+import Footer from '../../Footer/Footer';
+import Style from '../service.module.css';
+
+const BENEFITS = [
+  {
+    icon: 'three.svg',
+    title: 'Scalable Testing Programs',
+    description:
+      'Test at scale from a single to thousands of assets through a vetted community of researchers paired with smart technology.',
+  },
+  {
+    icon: 'three.svg',
+    title: 'Continuous Pentesting',
+    description:
+      'On-demand security testing on web and mobile apps, networks, APIs, and cloud assets — continuously, not annually.',
+  },
+  {
+    icon: 'three.svg',
+    title: 'Adversarial by Design',
+    description:
+      'Findings rooted in real attacker behavior, prioritized by exploitability so your team focuses on what truly matters.',
+  },
+];
+
+const ASSETS = [
+  { name: 'Web Application Testing', icon: 'flip.svg' },
+  { name: 'Mobile Application Testing', icon: 'flip.svg' },
+  { name: 'Network Penetration Testing', icon: 'flip.svg' },
+  { name: 'API Security Testing', icon: 'flip.svg' },
+  { name: 'Cloud Configuration Review', icon: 'flip.svg' },
+  { name: 'Source Code Review', icon: 'flip.svg' },
+];
+
 const Cyber = () => {
-    return (
-        <div>
-            <Navbar />
-            <img src="service_bg.webp" alt="" className={Style.service_bg} />
-            <div className={Style.services}>
-                <div className="container-fluid">
-                    <div className="row">
-                        <div className="col-md-1"></div>
-                        <div className="col-md-10">
-                            <div className={Style.hrading}>
-                                <h1>Cyber Security & VAPT</h1>
-                                <p>A Better Way to Pentest</p>
-                            </div>
+  return (
+    <>
+      <Navbar />
+      <section className={Style.service}>
+        <div className="container-wide">
+          <motion.div
+            className={Style.head}
+            initial={{ y: 30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ ease: [0.16, 1, 0.3, 1], duration: 0.7 }}
+          >
+            <span className={Style.eyebrow}>Services</span>
+            <h1 className={Style.title}>
+              Cyber Security &{' '}
+              <span className="text-gradient">VAPT</span>
+            </h1>
+            <p className={Style.lead}>A better way to pentest.</p>
+          </motion.div>
 
+          <div className={Style.intro}>
+            <h2 className={Style.introTitle}>
+              Scale your pentesting program today
+            </h2>
+            <p className={Style.introBody}>
+              Digital transformation is happening at breakneck speed, putting
+              security teams under intense pressure. We find exploitable
+              vulnerabilities faster than traditional pentesting with a
+              community of ethical security researchers paired with smart
+              technology — enabling continuous pentesting on web and mobile
+              applications, networks, APIs, and cloud assets.
+            </p>
+          </div>
 
-
-                        </div>
-                    </div>
-                </div>
+          <div className={Style.benefits}>
+            <h3 className={Style.sectionLabel}>The benefits</h3>
+            <h2 className={Style.sectionTitle}>
+              Going beyond traditional pentesting
+            </h2>
+            <div className={Style.benefitsGrid}>
+              {BENEFITS.map((b, idx) => (
+                <motion.article
+                  key={b.title}
+                  className={Style.benefitCard}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ duration: 0.5, delay: idx * 0.08 }}
+                  whileHover={{ y: -4 }}
+                >
+                  <div className={Style.benefitIcon}>
+                    <img src={b.icon} alt="" />
+                  </div>
+                  <h4 className={Style.benefitTitle}>{b.title}</h4>
+                  <p className={Style.benefitDesc}>{b.description}</p>
+                </motion.article>
+              ))}
             </div>
-            <div className={Style.services_one}>
-                <div className="container-fluid">
-                    <div className="row">
-                        <div className="col-md-1"></div>
-                        <div className="col-md-10">
+          </div>
 
-
-                            <div className={Style.heading_two}>
-                                <h2>Scale Your Pentesting Program Today</h2>
-                                <p>Digital transformation is happening at breakneck speed, putting security teams under intense pressure. Synack, one of the world’s largest pentesting providers, finds exploitable vulnerabilities faster than traditional pentesting with our community of ethical security researchers paired with smart technology. Synack offers an on-demand security testing platform, enabling continuous pentesting on web and mobile applications, networks, Application Programming Interfaces (APIs) and cloud assets.</p>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
+          <div className={Style.assets}>
+            <h3 className={Style.sectionLabel}>Penetration testing</h3>
+            <h2 className={Style.sectionTitle}>For specific assets</h2>
+            <div className={Style.assetsGrid}>
+              {ASSETS.map((a, idx) => (
+                <motion.div
+                  key={a.name}
+                  className={Style.assetCard}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ duration: 0.4, delay: idx * 0.05 }}
+                  whileHover={{ y: -4 }}
+                >
+                  <div className={Style.assetIcon}>
+                    <img src={a.icon} alt="" />
+                  </div>
+                  <span className={Style.assetName}>{a.name}</span>
+                </motion.div>
+              ))}
             </div>
-
-            <div className={Style.services_two}>
-                <div className="container-fluid">
-                    <div className="row">
-                        <div className="col-md-1">
-                        </div>
-                        <div className="col-md-10">
-                            <h2>THE BENEFITS OF</h2>
-                            <h3>Going Beyond Traditional Pentesting</h3>
-                            <div className="row">
-                                <div className="col-md-4">
-                                    <div className={Style.card}>
-                                        <div className={Style.one}>
-                                            <div className={Style.img}>
-                                                <img src="three.svg" alt="" />
-                                            </div>
-                                            <div className={Style.text}>
-                                                <h4>Scalable Testing Programs</h4>
-                                            </div>
-                                        </div>
-
-                                        <p>Test at scale from a single to thousands of assets through harnessing a vetted community of researchers and smart technology</p>
-                                    </div>
-                                </div>
-                                <div className="col-md-4">
-                                    <div className={Style.card}>
-                                        <div className={Style.one}>
-                                            <div className={Style.img}>
-                                                <img src="three.svg" alt="" />
-                                            </div>
-                                            <div className={Style.text}>
-                                                <h4>Scalable Testing Programs</h4>
-                                            </div>
-                                        </div>
-
-                                        <p>Test at scale from a single to thousands of assets through harnessing a vetted community of researchers and smart technology</p>
-                                    </div>
-                                </div>
-                                <div className="col-md-4">
-                                    <div className={Style.card}>
-                                        <div className={Style.one}>
-                                            <div className={Style.img}>
-                                                <img src="three.svg" alt="" />
-                                            </div>
-                                            <div className={Style.text}>
-                                                <h4>Scalable Testing Programs</h4>
-                                            </div>
-                                        </div>
-
-                                        <p>Test at scale from a single to thousands of assets through harnessing a vetted community of researchers and smart technology</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className={Style.asset}>
-                                <h2>PENETRATION TESTING</h2>
-                                <h3>for Specific Assets</h3>
-                                <div className="row">
-                                    <div className="col-md-4">
-                                        <div className={Style.flip_container}>
-                                            <div className={Style.flipper}>
-                                                <div className={Style.front}>
-                                                    <span className={Style.name}>Web application testing</span>
-                                                    <div className={Style.img}>
-                                                        <img src="flip.svg" alt="" />
-                                                    </div>
-                                                </div>
-                                                <div className={Style.back}>
-                                              
-                                                    <p>Mozilla Web Developer, MooTools & jQuery Consultant, MooTools Core Developer, Javascript Fanatic, CSS Tinkerer, PHP Hacker, and web lover.</p>
-                                                    <div className={Style.img}>
-                                                        <img src="flip.svg" alt="" />
-                                                    </div>
-                                                  
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="col-md-4">
-                                        <div className={Style.flip_container}>
-                                            <div className={Style.flipper}>
-                                                <div className={Style.front}>
-                                                    <span className={Style.name}>Web application testing</span>
-                                                    <div className={Style.img}>
-                                                        <img src="flip.svg" alt="" />
-                                                    </div>
-                                                </div>
-                                                <div className={Style.back}>
-                                              
-                                                    <p>Mozilla Web Developer, MooTools & jQuery Consultant, MooTools Core Developer, Javascript Fanatic, CSS Tinkerer, PHP Hacker, and web lover.</p>
-                                                    <div className={Style.img}>
-                                                        <img src="flip.svg" alt="" />
-                                                    </div>
-                                                  
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="col-md-4">
-                                        <div className={Style.flip_container}>
-                                            <div className={Style.flipper}>
-                                                <div className={Style.front}>
-                                                    <span className={Style.name}>Web application testing</span>
-                                                    <div className={Style.img}>
-                                                        <img src="flip.svg" alt="" />
-                                                    </div>
-                                                </div>
-                                                <div className={Style.back}>
-                                              
-                                                    <p>Mozilla Web Developer, MooTools & jQuery Consultant, MooTools Core Developer, Javascript Fanatic, CSS Tinkerer, PHP Hacker, and web lover.</p>
-                                                    <div className={Style.img}>
-                                                        <img src="flip.svg" alt="" />
-                                                    </div>
-                                                  
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="col-md-4">
-                                        <div className={Style.flip_container}>
-                                            <div className={Style.flipper}>
-                                                <div className={Style.front}>
-                                                    <span className={Style.name}>Web application testing</span>
-                                                    <div className={Style.img}>
-                                                        <img src="flip.svg" alt="" />
-                                                    </div>
-                                                </div>
-                                                <div className={Style.back}>
-                                              
-                                                    <p>Mozilla Web Developer, MooTools & jQuery Consultant, MooTools Core Developer, Javascript Fanatic, CSS Tinkerer, PHP Hacker, and web lover.</p>
-                                                    <div className={Style.img}>
-                                                        <img src="flip.svg" alt="" />
-                                                    </div>
-                                                  
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="col-md-4">
-                                        <div className={Style.flip_container}>
-                                            <div className={Style.flipper}>
-                                                <div className={Style.front}>
-                                                    <span className={Style.name}>Web application testing</span>
-                                                    <div className={Style.img}>
-                                                        <img src="flip.svg" alt="" />
-                                                    </div>
-                                                </div>
-                                                <div className={Style.back}>
-                                              
-                                                    <p>Mozilla Web Developer, MooTools & jQuery Consultant, MooTools Core Developer, Javascript Fanatic, CSS Tinkerer, PHP Hacker, and web lover.</p>
-                                                    <div className={Style.img}>
-                                                        <img src="flip.svg" alt="" />
-                                                    </div>
-                                                  
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="col-md-4">
-                                        <div className={Style.flip_container}>
-                                            <div className={Style.flipper}>
-                                                <div className={Style.front}>
-                                                    <span className={Style.name}>Web application testing</span>
-                                                    <div className={Style.img}>
-                                                        <img src="flip.svg" alt="" />
-                                                    </div>
-                                                </div>
-                                                <div className={Style.back}>
-                                              
-                                                    <p>Mozilla Web Developer, MooTools & jQuery Consultant, MooTools Core Developer, Javascript Fanatic, CSS Tinkerer, PHP Hacker, and web lover.</p>
-                                                    <div className={Style.img}>
-                                                        <img src="flip.svg" alt="" />
-                                                    </div>
-                                                  
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-
-
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-          
-            <Footer />
+          </div>
         </div>
-    )
-}
+      </section>
+      <Footer />
+    </>
+  );
+};
 
-export default Cyber
+export default Cyber;

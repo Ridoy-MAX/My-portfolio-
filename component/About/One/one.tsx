@@ -1,104 +1,109 @@
-import React from 'react'
 import { motion } from 'framer-motion';
 import Style from './one.module.css';
-import Link from 'next/link';
-const one = () => {
-    return (
-        <div>
-            <div className={Style.About_section_one}>
-                <div className="container-fluid">
-                    <div className="row">
-                        <div className="col-md-1"></div>
-                        <div className="col-md-10">
-                            <div className={Style.Heading_one}>
-                                <div className="row">
 
-                                    <div className="col-md-6">
+const One = () => {
+  return (
+    <section className={Style.about}>
+      <div className="container-wide">
+        <div className={Style.grid}>
+          <motion.div
+            className={Style.content}
+            initial={{ y: 30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ ease: [0.16, 1, 0.3, 1], duration: 0.7 }}
+          >
+            <span className={Style.eyebrow}>Get to know me</span>
+            <h1 className={Style.title}>
+              About <span className="text-gradient">Ridoy</span>
+            </h1>
+            <p className={Style.lead}>
+              Hi, I&apos;m <strong>Ridoy Hasan</strong> (full name{' '}
+              <strong>Harun Or Rashid</strong>) — a Full Stack Web Developer
+              based in Dhaka, Bangladesh. With three years of development
+              experience, I excel in creating robust web applications. Skilled
+              in PHP, RESTful APIs, Eloquent ORM, and authentication systems,
+              I ensure seamless front-end and back-end integration. My
+              expertise includes performance optimization, debugging, and Git
+              version control — delivering high-quality, client-focused
+              solutions.
+            </p>
+            <p className={Style.lead}>
+              I love developing interesting and unique designs. I also
+              challenge myself to learn new things, and I crave new experiences
+              and challenges.
+            </p>
 
-                                        <motion.div
-                                            initial={{ y: 100, opacity: 0, }}
-                                            animate={{ y: 0, opacity: 1 }}
-                                            transition={{ ease: "easeOut", duration: 0.6 }}>
-                                            <h1>About Me</h1>
-                                            {/* <h2>Trust in a name</h2> */}
-                                            <p>With three years of development experience, I excel in creating robust web applications. Skilled in PHP, RESTful APIs, Eloquent ORM, and authentication systems, I ensure seamless front-end and back-end integration. My expertise includes performance optimization, debugging, and Git version control, delivering high-quality, client-focused solutions
-                                                I love to Develop interesting and unique design. I also like to challenge myself to learn new things And I crave for new experiences And Challenges.
-                                            </p>
+            <div className={Style.actions}>
+              <motion.a
+                href="/CV.pdf"
+                download="CV.pdf"
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+                className={Style.btnPrimary}
+              >
+                Download CV <i className="fa-solid fa-download" />
+              </motion.a>
 
-
-                                        </motion.div>
-
-
-                                        <div className='mt-5'>
-
-                                            <div className={Style.social_link}>
-
-                                                <div className={Style.one}>
-                                                    <motion.a
-                                                        initial={{ opacity: 0, scale: 0.5 }}
-                                                        animate={{ opacity: 1, scale: 1 }}
-                                                        whileHover={{ scale: 1.1 }}
-                                                        whileTap={{ scale: 1 }}
-                                                        transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                                                        href="/CV.pdf"
-                                                        download="CV.pdf"
-                                                        className={Style.buttion_primary} >
-
-                                                        <h6>Download CV <i className="fa-solid fa-download"></i> </h6>
-
-                                                    </motion.a>
-                                                </div>
-
-                                                <div className={Style.two}>
-                                                    <div className={Style.icon}>
-                                                        <a href="https://www.linkedin.com/in/ridoy-hasan-54a449182/" target='blank'> <i className="fa-brands fa-linkedin-in"></i></a>
-
-                                                    </div>
-                                                    <div className={Style.icon}>
-                                                        <a
-                                                            href="https://api.whatsapp.com/send/?phone=%2B01717311750" // Correct format for WhatsApp link
-                                                            target="_blank" // Opens the link in a new tab or window
-                                                            rel="noopener noreferrer" // Security measure to prevent access to the original page
-                                                        >
-                                                            <i className="fa-brands fa-whatsapp"></i>
-                                                        </a>
-                                                    </div>
-                                                    <div className={Style.icon}>
-                                                        <a href="https://github.com/Ridoy-MAX" target="_blank" > <i className="fa-brands fa-github"></i></a>
-
-                                                    </div>
-                                                    <div className={Style.icon}>
-                                                        <a
-                                                            href="mailto:pou4w98y@gmail.com?subject=Hello&body=I%20would%20like%20to%20contact%20you%20regarding%20your%20portfolio."
-                                                            target="_blank" // Opens the email client in a new window/tab
-                                                            rel="noopener noreferrer" // Security attribute
-                                                        >
-                                                            <i className="fa-solid fa-at"></i>
-                                                        </a>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div className="col-md-6 mt-5">
-                                        <div className={Style.photo_my}>
-                                            <img src="me.jpg" alt="" className={Style.my_image} />
-
-                                        </div>
-                                    </div>
-
-
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
+              <div className={Style.socials}>
+                <a
+                  href="https://www.linkedin.com/in/ridoy-hasan-54a449182/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                  className={Style.socialIcon}
+                >
+                  <i className="fa-brands fa-linkedin-in" />
+                </a>
+                <a
+                  href="https://api.whatsapp.com/send/?phone=%2B01717311750"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="WhatsApp"
+                  className={Style.socialIcon}
+                >
+                  <i className="fa-brands fa-whatsapp" />
+                </a>
+                <a
+                  href="https://github.com/Ridoy-MAX"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub"
+                  className={Style.socialIcon}
+                >
+                  <i className="fa-brands fa-github" />
+                </a>
+                <a
+                  href="mailto:harunorrashid@gmail.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Email"
+                  className={Style.socialIcon}
+                >
+                  <i className="fa-solid fa-at" />
+                </a>
+              </div>
             </div>
-        </div>
-    )
-}
+          </motion.div>
 
-export default one
+          <motion.div
+            className={Style.visual}
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ ease: [0.16, 1, 0.3, 1], duration: 0.9, delay: 0.15 }}
+          >
+            <div className={Style.photoWrap}>
+              <div className={Style.photoGlow} />
+              <img
+                src="me.jpg"
+                alt="Ridoy Hasan (Harun Or Rashid) — Full Stack Web Developer"
+                className={Style.photo}
+              />
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default One;

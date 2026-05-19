@@ -1,97 +1,132 @@
-import React from 'react'
 import { motion } from 'framer-motion';
-import Style from '../Home.module.css'
-import Link from 'next/link';
+import Style from '../Home.module.css';
+
+const fadeUp = {
+  initial: { y: 30, opacity: 0 },
+  animate: { y: 0, opacity: 1 },
+};
+
 const One = () => {
   return (
-    <div>
-      <div className="row mt-5">
-        <div className="col-md-6">
+    <section className={Style.hero}>
+      <div className={Style.heroBg} aria-hidden="true">
+        <span className={`${Style.orb} ${Style.orb1}`} />
+        <span className={`${Style.orb} ${Style.orb2}`} />
+        <span className={`${Style.orb} ${Style.orb3}`} />
+        <span className={Style.ring} />
+      </div>
+      <div className="container-wide">
+        <div className={Style.heroGrid}>
           <motion.div
-            initial={{ y: 100, opacity: 0, }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ ease: "easeOut", duration: 0.6 }}
+            className={Style.heroContent}
+            {...fadeUp}
+            transition={{ ease: [0.16, 1, 0.3, 1], duration: 0.7 }}
+          >
+            <span className={Style.heroEyebrow}>
+              <span className={Style.heroDot} />
+              Available for work
+            </span>
+            <h1 className={Style.heroTitle}>
+              I&apos;m Ridoy Hasan
+              <br />
+              <span className="text-gradient">Full Stack</span>
+              <br />
+              Web Developer
+            </h1>
+            <p className={Style.heroName} aria-label="Full name">
+              Harun Or Rashid · Dhaka, Bangladesh
+            </p>
+            <p className={Style.heroLead}>
+              I break down complex user-experience problems to create
+              integrity-focused solutions. Currently a Full Stack Developer at{' '}
+              <a
+                href="https://hybri.tech/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={Style.heroLink}
+              >
+                Hybri.tech
+              </a>{' '}
+              — building ERP and MES applications with React, Next.js,
+              Laravel, Node.js, AWS EC2, and SAP UI5 Web Components.
+            </p>
 
-            className={Style.home_section_one}>
-            <h1>I am Ridoy</h1>
-            {/* <h2>Continuous</h2> */}
-            <h2>Full Stack </h2>
-            <h2>Web Developer</h2>
-            <p>I break down complex user experinece problems to create integritiy focussed solutions that connect billions of people</p>
+            <div className={Style.heroActions}>
+              <motion.a
+                href="/CV.pdf"
+                download="CV.pdf"
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+                className={Style.btnPrimary}
+              >
+                Download CV
+                <i className="fa-solid fa-download" />
+              </motion.a>
 
-
-            <div className='mt-5'>
-
-              <div className={Style.social_link}>
-
-                <div className={Style.one}>
-                  <motion.a
-                    initial={{ opacity: 0, scale: 0.5 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 1 }}
-                    transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                    href="/CV.pdf"
-                    download="CV.pdf"
-                    className={Style.buttion_primary} >
-
-                    <h6>Download CV <i className="fa-solid fa-download"></i> </h6>
-
-                  </motion.a>
-                </div>
-
-                <div className={Style.two}>
-                  <div className={Style.icon}>
-                    <a href="https://www.linkedin.com/in/ridoy-hasan-54a449182/" target='blank'> <i className="fa-brands fa-linkedin-in"></i></a>
-
-                  </div>
-                  <div className={Style.icon}>
-                    <a
-                      href="https://api.whatsapp.com/send/?phone=%2B01717311750" // Correct format for WhatsApp link
-                      target="_blank" // Opens the link in a new tab or window
-                      rel="noopener noreferrer" // Security measure to prevent access to the original page
-                    >
-                      <i className="fa-brands fa-whatsapp"></i>
-                    </a>
-                  </div>
-                  <div className={Style.icon}>
-                    <a href="https://github.com/Ridoy-MAX" target="_blank" > <i className="fa-brands fa-github"></i></a>
-
-                  </div>
-                  <div className={Style.icon}>
-                    <a
-                      href="mailto:pou4w98y@gmail.com?subject=Hello&body=I%20would%20like%20to%20contact%20you%20regarding%20your%20portfolio."
-                      target="_blank" // Opens the email client in a new window/tab
-                      rel="noopener noreferrer" // Security attribute
-                    >
-                      <i className="fa-solid fa-at"></i>
-                    </a>
-                  </div>
-                </div>
-
+              <div className={Style.socialIcons}>
+                <a
+                  href="https://www.linkedin.com/in/ridoy-hasan-54a449182/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                  className={Style.socialIcon}
+                >
+                  <i className="fa-brands fa-linkedin-in" />
+                </a>
+                <a
+                  href="https://api.whatsapp.com/send/?phone=%2B01717311750"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="WhatsApp"
+                  className={Style.socialIcon}
+                >
+                  <i className="fa-brands fa-whatsapp" />
+                </a>
+                <a
+                  href="https://github.com/Ridoy-MAX"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub"
+                  className={Style.socialIcon}
+                >
+                  <i className="fa-brands fa-github" />
+                </a>
+                <a
+                  href="mailto:harunorrashid@gmail.com?subject=Hello&body=I%20would%20like%20to%20contact%20you%20regarding%20your%20portfolio."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Email"
+                  className={Style.socialIcon}
+                >
+                  <i className="fa-solid fa-at" />
+                </a>
               </div>
             </div>
+          </motion.div>
 
-
-
-
-
-
-
+          <motion.div
+            className={Style.heroVisual}
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ ease: [0.16, 1, 0.3, 1], duration: 0.9, delay: 0.15 }}
+          >
+            <div className={Style.heroPhotoWrap}>
+              <div className={Style.heroPhotoGlow} />
+              <img
+                src="me.jpg"
+                alt="Ridoy Hasan (Harun Or Rashid) — Full Stack Web Developer from Dhaka, Bangladesh"
+                className={Style.heroPhoto}
+              />
+              <div className={Style.heroBadge}>
+                <span className={Style.heroBadgeDot} />
+                3+ years exp
+              </div>
+            </div>
           </motion.div>
         </div>
-        <div className="col-md-6 mt-5">
-          
-          <div className={Style.photo_my}>
-            <img src="me.jpg" alt="" className={Style.my_image} />
-
-          </div>
-
-        </div>
-
       </div>
-    </div>
-  )
-}
+    </section>
+  );
+};
 
-export default One
+export default One;

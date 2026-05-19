@@ -1,0 +1,235 @@
+.experience {
+  padding: 140px 0 80px;
+}
+
+.head {
+  text-align: center;
+  margin-bottom: var(--space-7);
+}
+
+.eyebrow {
+  display: inline-flex;
+  padding: 6px 14px;
+  margin-bottom: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-2);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-full);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+}
+
+.title {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.subtitle {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  text-align: center;
+}
+
+.timeline {
+  position: relative;
+  max-width: 880px;
+  margin: 0 auto var(--space-9);
+  padding-left: 32px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  left: 11px;
+  width: 2px;
+  background: linear-gradient(
+    180deg,
+    var(--accent-1) 0%,
+    var(--accent-2) 100%
+  );
+  opacity: 0.5;
+}
+
+.timelineItem {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.timelineItem:last-child {
+  margin-bottom: 0;
+}
+
+.dot {
+  position: absolute;
+  top: 28px;
+  left: -27px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--accent-grad);
+  box-shadow: 0 0 0 4px var(--bg-0), 0 0 20px rgba(124, 58, 237, 0.5);
+}
+
+.card {
+  padding: 28px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  transition: border-color var(--dur-base);
+}
+
+.card:hover {
+  border-color: var(--glass-border-strong);
+}
+
+.cardHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.role {
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.period {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  padding: 4px 12px;
+  color: var(--text-2);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-full);
+}
+
+.org {
+  font-size: 14px;
+  color: var(--accent-2);
+  margin-bottom: 12px;
+}
+
+.org a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: opacity var(--dur-fast);
+}
+
+.org a:hover {
+  opacity: 0.8;
+}
+
+.org i {
+  font-size: 11px;
+}
+
+.desc {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text-2);
+}
+
+.eduHead {
+  margin: var(--space-8) 0 var(--space-6);
+}
+
+.eduGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 20px;
+}
+
+.eduCard {
+  display: flex;
+  gap: 20px;
+  padding: 24px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  transition: border-color var(--dur-base);
+}
+
+.eduCard:hover {
+  border-color: var(--glass-border-strong);
+}
+
+.eduLogo {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+  padding: 6px;
+  background: #fff;
+  border-radius: var(--radius-md);
+}
+
+.eduLogo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.eduBody {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.eduTitle {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.eduOrg {
+  font-size: 14px;
+  color: var(--text-2);
+}
+
+.eduMeta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 4px;
+  font-size: 13px;
+  color: var(--text-3);
+}
+
+.periodPill {
+  padding: 3px 10px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--text-2);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-full);
+}
+
+@media (max-width: 640px) {
+  .experience {
+    padding: 110px 0 60px;
+  }
+  .card,
+  .eduCard {
+    padding: 20px;
+  }
+}
