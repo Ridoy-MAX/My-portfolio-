@@ -2,7 +2,7 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 
 export const SITE = {
-  url: 'https://ridoy-hasan.vercel.app',
+  url: 'https://my-portfolio-mu-orcin-53.vercel.app',
   name: 'Ridoy Hasan',
   legalName: 'Harun Or Rashid (Ridoy)',
   jobTitle: 'Full Stack Web Developer',
@@ -137,6 +137,18 @@ const SEO: React.FC<SEOProps> = ({
       {/* Favicons */}
       <link rel="icon" href="/logo.png" />
       <link rel="apple-touch-icon" href="/logo.png" />
+
+      {/* IndexNow (Bing/Yandex/DuckDuckGo) verification */}
+      <meta
+        name="indexnow"
+        content="134551023abe85b89c80ae586b4a690f"
+      />
+
+      {/* Bing site verification placeholder — replace once verified */}
+      {/* <meta name="msvalidate.01" content="YOUR_BING_CODE" /> */}
+
+      {/* Google site verification placeholder — replace once verified */}
+      {/* <meta name="google-site-verification" content="YOUR_GOOGLE_CODE" /> */}
 
       {/* Structured data */}
       <script
