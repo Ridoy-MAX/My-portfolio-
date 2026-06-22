@@ -1,58 +1,118 @@
 import { motion } from 'framer-motion';
-import Style from '../Home.module.css';
+import Style from '../HeroAdvanced.module.css';
 
 const SKILLS = [
-  { name: 'React', icon: 'fa-brands fa-react', color: '#61dafb' },
-  { name: 'Angular', icon: 'fa-brands fa-angular', color: '#dd0031' },
-  { name: 'Node.js', icon: 'fa-brands fa-node-js', color: '#5fa04e' },
-  { name: 'Laravel', icon: 'fa-brands fa-laravel', color: '#ff2d20' },
-  { name: 'PHP', icon: 'fa-brands fa-php', color: '#777bb4' },
-  { name: 'JavaScript', icon: 'fa-brands fa-js', color: '#f7df1e' },
-  { name: 'AWS EC2', icon: 'fa-brands fa-aws', color: '#ff9900' },
-  { name: 'Bootstrap', icon: 'fa-brands fa-bootstrap', color: '#7952b3' },
-  { name: 'Github', icon: 'fa-brands fa-github', color: '#ffffff' },
+  { name: 'Angular', icon: 'fa-brands fa-angular' },
+  { name: 'React', icon: 'fa-brands fa-react' },
+  { name: 'Nest.js', icon: 'fa-brands fa-node-js' },
+  { name: 'TypeScript', icon: 'fa-brands fa-js' },
+  { name: 'Node.js', icon: 'fa-brands fa-node-js' },
+  { name: 'Laravel', icon: 'fa-brands fa-laravel' },
+  { name: 'AWS', icon: 'fa-brands fa-aws' },
+  { name: 'PostgreSQL', icon: 'fa-solid fa-database' },
+  { name: 'Docker', icon: 'fa-brands fa-docker' },
+  { name: 'Git', icon: 'fa-brands fa-github' },
 ];
+
+const containerVariants = {
+  initial: { opacity: 0 },
+  animate: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.08,
+      delayChildren: 0.3,
+    },
+  },
+};
+
+const itemVariants = {
+  initial: { opacity: 0, y: 40, scale: 0.9 },
+  animate: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.6,
+      ease: [0.16, 1, 0.3, 1],
+    },
+  },
+};
 
 const Two = () => {
   return (
-    <section className={Style.skills} id="skill">
-      <div className="container">
-        <div className={Style.sectionHead}>
-          <span className={Style.eyebrow}>Toolkit</span>
-          <h2 className={Style.sectionTitle}>
-            My <span className="text-gradient">Skills</span>
-          </h2>
-          <p className={Style.sectionLead}>
-            We put your ideas and your wishes into the form of a unique web
-            project that inspires you and your customers.
-          </p>
-        </div>
+    <section className={`${Style.section} ${Style.alternate}`} id="skill">
+      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 40px' }}>
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <h2 className={Style.sectionTitle}>Tech Stack</h2>
+          <div className={Style.accentBar} />
+        </motion.div>
 
-        <div className={Style.skillsGrid}>
-          {SKILLS.map((skill, idx) => (
+        <motion.div
+          className={Style.gridContainer}
+          variants={containerVariants}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          {SKILLS.map((skill) => (
             <motion.div
               key={skill.name}
-              className={Style.skillCard}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{
-                duration: 0.5,
-                delay: idx * 0.06,
-                ease: [0.16, 1, 0.3, 1],
+              className={Style.card}
+              variants={itemVariants}
+              whileHover={{
+                y: -8,
+                transition: { duration: 0.3 },
               }}
-              whileHover={{ y: -4 }}
             >
               <div
-                className={Style.skillIcon}
-                style={{ color: skill.color }}
+                style={{
+                  fontSize: '36px',
+                  marginBottom: '16px',
+                  color: 'var(--accent)',
+                }}
               >
                 <i className={skill.icon} />
               </div>
-              <h3 className={Style.skillName}>{skill.name}</h3>
+              <h3 className={Style.cardTitle}>{skill.name}</h3>
+              <p className={Style.cardDescription}>
+                Core technology in my daily workflow
+              </p>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.7, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          style={{
+            marginTop: '80px',
+            padding: '40px',
+            background: 'rgba(0, 240, 255, 0.05)',
+            border: '1px solid rgba(0, 240, 255, 0.2)',
+            borderRadius: '12px',
+          }}
+        >
+          <p
+            style={{
+              fontSize: '16px',
+              lineHeight: '1.8',
+              color: 'rgba(232, 234, 237, 0.9)',
+              margin: 0,
+            }}
+          >
+            I specialize in building scalable full-stack applications with modern
+            frameworks and robust architectures. From interactive frontend
+            experiences to complex backend systems, I approach every project with
+            attention to performance, accessibility, and user experience.
+          </p>
+        </motion.div>
       </div>
     </section>
   );

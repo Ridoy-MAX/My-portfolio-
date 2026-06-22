@@ -1,130 +1,175 @@
-import { motion } from 'framer-motion';
-import Style from '../Home.module.css';
-
-const fadeUp = {
-  initial: { y: 30, opacity: 0 },
-  animate: { y: 0, opacity: 1 },
-};
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useRef, useState, useEffect } from 'react';
+import AdvancedGeometricHero from '../AdvancedGeometricHero';
+import Style from '../HeroAdvanced.module.css';
 
 const One = () => {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const { scrollY } = useScroll();
+  const [scrollValue, setScrollValue] = useState(0);
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const unsubscribe = scrollY.onChange((v) => setScrollValue(v));
+    return () => unsubscribe();
+  }, [scrollY]);
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePos({ x: e.clientX, y: e.clientY });
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
+  const containerVariants = {
+    initial: { opacity: 0 },
+    animate: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.12,
+        delayChildren: 0.3,
+        ease: [0.34, 1.56, 0.64, 1],
+      },
+    },
+  };
+
+  const itemVariants = {
+    initial: { opacity: 0, y: 50, scale: 0.95 },
+    animate: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.9,
+        ease: [0.34, 1.56, 0.64, 1],
+      },
+    },
+  };
+
+  // Scroll-driven parallax
+  const contentY = useTransform(scrollY, [0, 500], [0, 150]);
+  const contentOpacity = useTransform(scrollY, [0, 300], [1, 0]);
+
   return (
-    <section className={Style.hero}>
-      <div className={Style.heroBg} aria-hidden="true">
-        <span className={`${Style.orb} ${Style.orb1}`} />
-        <span className={`${Style.orb} ${Style.orb2}`} />
-        <span className={`${Style.orb} ${Style.orb3}`} />
-        <span className={Style.ring} />
+    <section ref={sectionRef} className={Style.heroSection}>
+      <div className={Style.depthLayer}>
+        <div className={Style.depthLayerFront} />
+        <div className={Style.depthLayerBack} />
       </div>
-      <div className="container-wide">
-        <div className={Style.heroGrid}>
-          <motion.div
-            className={Style.heroContent}
-            {...fadeUp}
-            transition={{ ease: [0.16, 1, 0.3, 1], duration: 0.7 }}
-          >
-            <span className={Style.heroEyebrow}>
-              <span className={Style.heroDot} />
-              Available for work
-            </span>
-            <h1 className={Style.heroTitle}>
-              I&apos;m Ridoy Hasan
-              <br />
-              <span className="text-gradient">Full Stack</span>
-              <br />
-              Web Developer
-            </h1>
-            <p className={Style.heroName} aria-label="Full name">
-              Harun Or Rashid · Dhaka, Bangladesh
-            </p>
-            <p className={Style.heroLead}>
-              I break down complex user-experience problems to create
-              integrity-focused solutions. Currently a Full Stack Developer at{' '}
-              <a
-                href="https://hybri.tech/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={Style.heroLink}
-              >
-                Hybri.tech
-              </a>{' '}
-              — building ERP and MES applications with React, Next.js,
-              Laravel, Node.js, AWS EC2, and SAP UI5 Web Components.
-            </p>
 
-            <div className={Style.heroActions}>
-              <motion.a
-                href="/CV.pdf"
-                download="CV.pdf"
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
-                className={Style.btnPrimary}
-              >
-                Download CV
-                <i className="fa-solid fa-download" />
-              </motion.a>
-
-              <div className={Style.socialIcons}>
-                <a
-                  href="https://www.linkedin.com/in/ridoy-hasan-54a449182/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="LinkedIn"
-                  className={Style.socialIcon}
-                >
-                  <i className="fa-brands fa-linkedin-in" />
-                </a>
-                <a
-                  href="https://api.whatsapp.com/send/?phone=%2B01717311750"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="WhatsApp"
-                  className={Style.socialIcon}
-                >
-                  <i className="fa-brands fa-whatsapp" />
-                </a>
-                <a
-                  href="https://github.com/Ridoy-MAX"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="GitHub"
-                  className={Style.socialIcon}
-                >
-                  <i className="fa-brands fa-github" />
-                </a>
-                <a
-                  href="mailto:harunorrashid@gmail.com?subject=Hello&body=I%20would%20like%20to%20contact%20you%20regarding%20your%20portfolio."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Email"
-                  className={Style.socialIcon}
-                >
-                  <i className="fa-solid fa-at" />
-                </a>
-              </div>
-            </div>
-          </motion.div>
-
-          <motion.div
-            className={Style.heroVisual}
-            initial={{ scale: 0.9, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ ease: [0.16, 1, 0.3, 1], duration: 0.9, delay: 0.15 }}
-          >
-            <div className={Style.heroPhotoWrap}>
-              <div className={Style.heroPhotoGlow} />
-              <img
-                src="me.jpg"
-                alt="Ridoy Hasan (Harun Or Rashid) — Full Stack Web Developer from Dhaka, Bangladesh"
-                className={Style.heroPhoto}
-              />
-              <div className={Style.heroBadge}>
-                <span className={Style.heroBadgeDot} />
-                3+ years exp
-              </div>
-            </div>
-          </motion.div>
-        </div>
+      <div className={Style.canvasWrapper}>
+        <AdvancedGeometricHero
+          scrollY={scrollValue}
+          mouseX={mousePos.x}
+          mouseY={mousePos.y}
+        />
       </div>
+
+      <motion.div
+        className={Style.heroContent}
+        variants={containerVariants}
+        initial="initial"
+        animate="animate"
+        style={{ y: contentY, opacity: contentOpacity }}
+      >
+        <motion.span className={Style.heroEyebrow} variants={itemVariants}>
+          <span className={Style.heroDot} />
+          Available for work
+        </motion.span>
+
+        <motion.h1 className={Style.heroTitle} variants={itemVariants}>
+          Ridoy Hasan
+          <br />
+          Full-Stack Engineer
+        </motion.h1>
+
+        <motion.p className={Style.heroSubtitle} variants={itemVariants}>
+          I design and build sophisticated interactive experiences.
+          <br />
+          Currently engineering ERP and MES applications at{' '}
+          <span style={{ color: '#00f0ff' }}>Hybri.tech</span>
+          <br />
+          with React, Next.js, Node.js, and AWS.
+        </motion.p>
+
+        <motion.div className={Style.heroActions} variants={itemVariants}>
+          <motion.a
+            href="/CV.pdf"
+            download="CV.pdf"
+            whileHover={{ scale: 1.08, y: -3 }}
+            whileTap={{ scale: 0.92, y: -1 }}
+            className={Style.btnPrimary}
+          >
+            Download CV
+            <i className="fa-solid fa-download" />
+          </motion.a>
+
+          <motion.div className={Style.socialIcons}>
+            <motion.a
+              href="https://www.linkedin.com/in/ridoy-hasan-54a449182/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              className={Style.socialIcon}
+              whileHover={{ scale: 1.12, y: -6 }}
+              whileTap={{ scale: 0.88 }}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{
+                duration: 0.6,
+                delay: 0.7,
+                ease: [0.34, 1.56, 0.64, 1],
+              }}
+            >
+              <i className="fa-brands fa-linkedin-in" />
+            </motion.a>
+            <motion.a
+              href="https://github.com/Ridoy-MAX"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+              className={Style.socialIcon}
+              whileHover={{ scale: 1.12, y: -6 }}
+              whileTap={{ scale: 0.88 }}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{
+                duration: 0.6,
+                delay: 0.8,
+                ease: [0.34, 1.56, 0.64, 1],
+              }}
+            >
+              <i className="fa-brands fa-github" />
+            </motion.a>
+            <motion.a
+              href="mailto:harunorrashid@gmail.com?subject=Hello Ridoy"
+              aria-label="Email"
+              className={Style.socialIcon}
+              whileHover={{ scale: 1.12, y: -6 }}
+              whileTap={{ scale: 0.88 }}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{
+                duration: 0.6,
+                delay: 0.9,
+                ease: [0.34, 1.56, 0.64, 1],
+              }}
+            >
+              <i className="fa-solid fa-envelope" />
+            </motion.a>
+          </motion.div>
+        </motion.div>
+
+        <motion.p
+          className={Style.heroSubtitle}
+          variants={itemVariants}
+          style={{ fontSize: '13px', marginTop: '40px', opacity: 0.5 }}
+        >
+          Dhaka, Bangladesh · {new Date().getFullYear()}
+        </motion.p>
+      </motion.div>
     </section>
   );
 };

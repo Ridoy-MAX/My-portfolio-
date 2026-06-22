@@ -4,9 +4,17 @@
 
 :root {
   /* Typography */
-  --font-sans: 'Plus Jakarta Sans', 'DM Sans', system-ui, -apple-system, sans-serif;
-  --font-display: 'Plus Jakarta Sans', 'DM Sans', sans-serif;
-  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --font-sans: 'Inter', 'Plus Jakarta Sans', 'DM Sans', system-ui, -apple-system, sans-serif;
+  --font-display: 'Courier Prime', 'Plus Jakarta Sans', 'DM Sans', sans-serif;
+  --font-mono: 'Fira Code', 'JetBrains Mono', ui-monospace, monospace;
+
+  /* NEW: Modern Maximalist Palette */
+  --ground: #0a0e27;
+  --text: #e8eaed;
+  --accent: #00f0ff;
+  --accent-2: #ff00ff;
+  --accent-rgb: 0, 240, 255;
+  --accent-2-rgb: 255, 0, 255;
 
   /* Color — base */
   --bg-0: #06060c;

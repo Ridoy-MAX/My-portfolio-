@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import styles from '../Home.module.css';
+import { motion, AnimatePresence } from 'framer-motion';
+import ModernStyle from '../HeroAdvanced.module.css';
 import ProjectCard from './ProjectCard/ProjectCard';
 
 interface Skill {
@@ -125,44 +126,142 @@ const frontendProjects: Project[] = [
 
 type Tab = 'laravel' | 'frontend';
 
+const containerVariants = {
+  initial: { opacity: 0 },
+  animate: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.2,
+    },
+  },
+};
+
+const itemVariants = {
+  initial: { opacity: 0, y: 40, scale: 0.95 },
+  animate: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.6,
+      ease: [0.16, 1, 0.3, 1],
+    },
+  },
+  exit: {
+    opacity: 0,
+    y: -40,
+    scale: 0.95,
+    transition: {
+      duration: 0.3,
+    },
+  },
+};
+
 const Four = () => {
   const [tab, setTab] = useState<Tab>('laravel');
   const projects = tab === 'laravel' ? laravelProjects : frontendProjects;
 
   return (
-    <section className={styles.work} id="work">
-      <div className="container-wide">
-        <div className={styles.sectionHead}>
-          <span className={styles.eyebrow}>Portfolio</span>
-          <h2 className={styles.sectionTitle}>
-            My Recent <span className="text-gradient">Works</span>
-          </h2>
-        </div>
+    <section className={ModernStyle.section} id="work">
+      <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 40px' }}>
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <h2 className={ModernStyle.sectionTitle}>Featured Work</h2>
+          <div className={ModernStyle.accentBar} />
+        </motion.div>
 
-        <div className={styles.tabBar} role="tablist">
-          <button
-            role="tab"
-            aria-selected={tab === 'laravel'}
-            className={`${styles.tabBtn} ${tab === 'laravel' ? styles.tabBtnActive : ''}`}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+          style={{
+            display: 'flex',
+            gap: '16px',
+            marginBottom: '60px',
+            flexWrap: 'wrap',
+          }}
+        >
+          <motion.button
             onClick={() => setTab('laravel')}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            style={{
+              padding: '12px 28px',
+              fontSize: '15px',
+              fontFamily: "'Inter', sans-serif",
+              fontWeight: 600,
+              border: 'none',
+              borderRadius: '8px',
+              cursor: 'pointer',
+              background:
+                tab === 'laravel'
+                  ? 'rgba(0, 240, 255, 0.15)'
+                  : 'rgba(0, 240, 255, 0.05)',
+              color: 'var(--accent)',
+              borderBottom:
+                tab === 'laravel' ? '2px solid var(--accent)' : 'none',
+              transition: 'all 0.3s ease',
+            }}
           >
-            Laravel Projects
-          </button>
-          <button
-            role="tab"
-            aria-selected={tab === 'frontend'}
-            className={`${styles.tabBtn} ${tab === 'frontend' ? styles.tabBtnActive : ''}`}
+            Backend Projects
+          </motion.button>
+          <motion.button
             onClick={() => setTab('frontend')}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            style={{
+              padding: '12px 28px',
+              fontSize: '15px',
+              fontFamily: "'Inter', sans-serif",
+              fontWeight: 600,
+              border: 'none',
+              borderRadius: '8px',
+              cursor: 'pointer',
+              background:
+                tab === 'frontend'
+                  ? 'rgba(0, 240, 255, 0.15)'
+                  : 'rgba(0, 240, 255, 0.05)',
+              color: 'var(--accent)',
+              borderBottom:
+                tab === 'frontend' ? '2px solid var(--accent)' : 'none',
+              transition: 'all 0.3s ease',
+            }}
           >
-            Frontend Design
-          </button>
-        </div>
+            Frontend Projects
+          </motion.button>
+        </motion.div>
 
-        <div className={styles.projectsGrid} key={tab}>
-          {projects.map((project) => (
-            <ProjectCard key={project.title} {...project} />
-          ))}
-        </div>
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={tab}
+            variants={containerVariants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            style={{
+              display: 'grid',
+              gridTemplateColumns:
+                'repeat(auto-fit, minmax(320px, 1fr))',
+              gap: '32px',
+            }}
+          >
+            {projects.map((project, idx) => (
+              <motion.div
+                key={project.title}
+                variants={itemVariants}
+                whileHover={{ y: -8 }}
+              >
+                <ProjectCard {...project} />
+              </motion.div>
+            ))}
+          </motion.div>
+        </AnimatePresence>
       </div>
     </section>
   );
